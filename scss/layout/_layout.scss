@@ -1,0 +1,57 @@
+html {
+    font-size: 16px;
+
+    body {
+        font-family: "Courier New", Courier, monospace;
+        font-size: 1rem;
+        color: white;
+        background-color: #666666;
+
+        & > header {
+            padding: 0.5rem;
+            text-align: center;
+
+            @include for-tablet {
+                padding: 1rem;
+            }
+
+            @include for-desktop {
+                padding: 1rem 1.5rem;
+            }
+
+            h1 {
+                font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                text-transform: uppercase;
+                letter-spacing: 2px;
+            }
+        }
+
+        & > main {
+            padding: 0.5rem;
+            text-align: center;
+
+            @include for-tablet {
+                padding: 1rem;
+            }
+
+            @include for-desktop {
+                padding: 1rem 1.5rem;
+            }
+
+            & > .error {
+                padding: 1rem;
+                color: white;
+                background-color: rgba(red, 0.5);
+                border: 1px solid red;
+                border-radius: 0.5rem;
+            }
+
+            h2 {
+                margin-top: 0;
+                font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                text-transform: uppercase;
+                letter-spacing: 2px;
+            }
+        }
+    }
+}

@@ -14,6 +14,10 @@ const getFirstApiAnswer = () => {
     })
     .catch(error => {
       console.log(error)
+      showError({
+        status: 404,
+        statusText: 'No server found'
+      })
     })
 }
 

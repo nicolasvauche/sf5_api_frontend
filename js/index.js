@@ -1,8 +1,13 @@
+const token = '$2y$13$gCmx5ea0Y/ssfJlWsJiwMeKRA.eN2Jj8gM6Tr2nemlO7/qkisJ5Qm'
 const url = 'http://localhost:8000/api'
 
 const getFirstApiAnswer = () => {
   window
-    .fetch(url)
+    .fetch(url, {
+      headers: {
+        'X-AUTH-TOKEN': token
+      }
+    })
     .then(response => {
       if (!response.ok) {
         showError(response)
@@ -29,6 +34,7 @@ const showError = error => {
 
   switch (error.status) {
     case 404:
+    case 401:
       errorElt.innerHTML = 'Ooops…<br />' + error.statusText
       break
     default:

@@ -1,4 +1,4 @@
-const token = '$2y$13$gCmx5ea0Y/ssfJlWsJiwMeKRA.eN2Jj8gM6Tr2nemlO7/qkisJ5Qm'
+const token = '$2y$13$n5idwurG8F4Gyh6/vwqRy.rA0MXgSgadbNnpmXHjvUqbPRzYqNyqC'
 const url = 'http://localhost:8000/api'
 
 const getFirstApiAnswer = () => {
@@ -78,7 +78,8 @@ const buildPost = post => {
   thumbnailHeader.appendChild(postTitle)
 
   const postExcerpt = document.createElement('p')
-  postExcerpt.innerHTML = truncate(post.content, 125)
+  postExcerpt.innerHTML = truncate(post.content, 80)
+  postExcerpt.innerHTML += ' [<a href="#">+</a>]'
 
   postExcerpt.classList.add('grid-item-excerpt')
   thumbnailContent.appendChild(postExcerpt)

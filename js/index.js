@@ -1,7 +1,7 @@
-const token = '$2y$13$n5idwurG8F4Gyh6/vwqRy.rA0MXgSgadbNnpmXHjvUqbPRzYqNyqC'
+const token = '$2y$13$n5hOZxqyd7Tlb4S7XfiXP.TWQ..3KMMfuzoGzEK6CxU9gu4sy8PnO'
 const url = 'http://localhost:8000/api'
 
-const getFirstApiAnswer = () => {
+const getApiAnswer = () => {
   window
     .fetch(url, {
       headers: {
@@ -34,6 +34,7 @@ const showError = error => {
 
   switch (error.status) {
     case 404:
+    case 403:
     case 401:
       errorElt.innerHTML = 'Ooops…<br />' + error.statusText
       break
@@ -97,5 +98,5 @@ const truncate = (text, limit) => {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-  getFirstApiAnswer()
+  getApiAnswer()
 })
